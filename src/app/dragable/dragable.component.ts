@@ -48,13 +48,20 @@ export class DragableComponent implements AfterViewInit {
     const answerIndex = this.answerContainerPositions.findIndex((position) => {
       return X > position.x && Y > position.y && X + WIDTH < position.x + position.width && Y + HEIGHT < position.y + position.height;
     });
-    if (choice.answerIndex !== null) {
-      this.answers[choice.answerIndex] = null;
-    }
     if (answerIndex === -1) {
       choice.dragPosition = {x: 0, y: 0};
+      if (choice.answerIndex !== null) {
+        this.answers[choice.answerIndex] = null;
+      }
       choice.answerIndex = null;
     } else {
+      if (this.choices.some(c => c.answerIndex === answerIndex)) {
+        choice.dragPosition = {x: choice.dragPosition.x, y: choice.dragPosition.y};
+        return;
+      }
+      if (choice.answerIndex !== null) {
+        this.answers[choice.answerIndex] = null;
+      }
       const answerPosition = this.answerContainerPositions[answerIndex];
       this.answers[answerIndex] = choice.value;
       choice.answerIndex = answerIndex;
