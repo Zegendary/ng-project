@@ -1,1 +1,20 @@
-<p>dragable works!1111</p>
+<div class="xxx">
+  <div class="choices">
+    <div class="choice" *ngFor="let choice of choices; let i = index">
+      <div class="box" [attr.data-index]="i" cdkDrag (cdkDragEnded)="end($event)"
+           [cdkDragFreeDragPosition]="choice.dragPosition"
+      >{{choice.value}}</div>
+    </div>
+  </div>
+
+
+  <div class="answers" #myAnswers>
+    <div class="answer" *ngFor="let answer of answers">
+      <div class="empty box"></div>
+    </div>
+  </div>
+
+  <div class="result">
+    result: [<span *ngFor="let answer of answers">{{answer || 'empty'}}</span>]
+  </div>
+</div>
