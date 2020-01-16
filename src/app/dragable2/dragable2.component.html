@@ -1,0 +1,33 @@
+<div cdkDropListGroup>
+  <div class="choices"
+       cdkDropList
+       #Choice="cdkDropList"
+       [cdkDropListData]="choices"
+       (cdkDropListDropped)="drop($event)"
+       cdkDropListSortingDisabled
+  >
+    <div class="choice" *ngFor="let choice of choices">
+      <div class="box-wrapper">
+        <div class="box" *ngIf="choice" cdkDrag [cdkDragData]="choice">{{choice.value}}</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="answers">
+    <div class="answer" *ngFor="let answer of answers;let i = index" cdkDropList
+         #Answer="cdkDropList"
+         [cdkDropListData]="{type: 'answer', index: i, answer: answer}"
+         (cdkDropListDropped)="drop($event)"
+         [cdkDropListEnterPredicate]="answerPredicate"
+    >
+      <div class="box-wrapper">
+        <div class="box" *ngIf="answer" cdkDrag [cdkDragData]="{type: 'answer', answer: answer}">{{answer && answer.value}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="result">
+    result: [<span *ngFor="let answer of answers">{{(answer && answer.value) || 'empty'}}</span>]
+  </div>
+</div>
