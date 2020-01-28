@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { DragableComponent } from './dragable/dragable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Dragable2Component } from './dragable2/dragable2.component';
+import { Game11Component } from './game11/game11.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DragableComponent,
-    Dragable2Component
+    Dragable2Component,
+    Game11Component
   ],
   imports: [
     BrowserModule,
