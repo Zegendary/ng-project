@@ -1,0 +1,26 @@
+.container{
+  padding: 40px;
+  .status{text-align: center}
+  .img-wrapper{
+    position: relative;
+    width: 664.5px;
+    height: 465px;
+    margin: auto;
+    .zoom{
+      position: absolute;
+      right: -12px;
+      top: -12px;
+      z-index: 1;
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+      background: green;
+      .icon{
+        color: white;
+      }
+    }
+  }
+  .action{
+    text-align: right;
+  }
+}

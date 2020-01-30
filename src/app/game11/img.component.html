@@ -1,0 +1,24 @@
+<div class="image-container">
+  <img src="../../assets/game_11.jpg" alt="">
+  <div class="option"
+       [matTooltip]="option.text"
+       matTooltipClass="tooltip"
+       matTooltipPosition="above"
+       #tooltip="matTooltip"
+       [matTooltipDisabled]="status !== 'review' && option.correct"
+       (mouseenter)="$event.stopImmediatePropagation()"
+       (mouseleave)="$event.stopImmediatePropagation()"
+       *ngFor="let option of options"
+       [style.width.%]="option.width"
+       [style.height.%]="option.height"
+       [style.top.%]="option.y"
+       [style.left.%]="option.x"
+       [class.select]="status ==='selecting' && selections.includes(option.id)"
+       [class.correct]="status !=='selecting' && option.correct"
+       [class.review]="status === 'review'"
+       (click)="onClick(option.id, tooltip)"
+  >
+    <mat-icon *ngIf="status==='checked' && option.correct" class="icon" svgIcon="check-circle"
+              aria-hidden="false"></mat-icon>
+  </div>
+</div>
