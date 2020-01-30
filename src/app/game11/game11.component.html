@@ -1,1 +1,26 @@
-<p>game11 works!</p>
+<div class="container">
+  <p class="status">
+    <span *ngIf="status==='selecting'">find mistakes</span>
+    <span *ngIf="status==='checked'">
+      {{score === totalScore? 'Yes!': 'Look, That would have been right'}}
+    </span>
+    <span *ngIf="status==='review'">Click box to see Tips</span>
+    <span *ngIf="status==='result'">Your score: {{score}}/{{totalScore}}</span>
+  </p>
+  <div class="img-wrapper">
+    <div class="zoom" *ngIf="status === 'selecting'" (click)="openDialog()">
+      <mat-icon class="icon" svgIcon="zoom-in" aria-hidden="false"></mat-icon>
+    </div>
+    <app-game11-img
+      [options]="options"
+      [status]="status"
+      [selections]="selections"
+      (toggled)="toggle($event)"
+    ></app-game11-img>
+  </div>
+  <div class="action">
+    <button mat-raised-button color="primary" *ngIf="status === 'selecting'" (click)="check()">check</button>
+    <button mat-raised-button color="primary" *ngIf="status === 'checked'" (click)="status = 'review'">get Tips</button>
+    <button mat-raised-button color="primary" *ngIf="status === 'review'" (click)="status = 'result'">get Score</button>
+  </div>
+</div>

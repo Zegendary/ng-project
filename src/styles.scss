@@ -30,3 +30,6 @@ $dragable-project-theme: mat-light-theme($dragable-project-primary, $dragable-pr
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// game_11 dialog padding
+.game-11-dialog .mat-dialog-container{padding: 0}
