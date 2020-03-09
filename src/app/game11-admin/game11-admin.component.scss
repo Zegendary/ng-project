@@ -1,0 +1,38 @@
+.main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  .image-container{
+    position: relative;
+    width: 715px;
+    height: 500px;
+    >img{
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    >.block{
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid rgba(21,117,21, .8);
+      background: rgba(21,117,21, .4);
+      color: red;
+      pointer-events: none;
+    }
+  }
+  .area-info{
+    overflow: auto;
+    height: 100%;
+    ul>li{
+      .title{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

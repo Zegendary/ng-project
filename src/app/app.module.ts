@@ -15,6 +15,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {Dragable2Component} from './dragable2/dragable2.component';
 import {Game11Component, ImgOverviewDialogComponent} from './game11/game11.component';
 import { ImgComponent } from './game11/img.component';
+import { Game11AdminComponent } from './game11-admin/game11-admin.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ImgComponent } from './game11/img.component';
     Dragable2Component,
     Game11Component,
     ImgComponent,
-    ImgOverviewDialogComponent
+    ImgOverviewDialogComponent,
+    Game11AdminComponent
   ],
   entryComponents: [
     ImgOverviewDialogComponent
@@ -37,7 +40,8 @@ import { ImgComponent } from './game11/img.component';
     HttpClientModule,
     MatDialogModule,
     MatTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [
     {

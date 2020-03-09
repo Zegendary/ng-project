@@ -1,0 +1,38 @@
+<div class="main">
+  <div class="image-container">
+    <img src="../../assets/game_11.jpg" alt=""
+         (click)="drawArea($event)"
+         (mousemove)="recordLocation($event)">
+    <div class="block"
+         *ngFor="let area of areas;let i = index"
+         [style.width.%]="area.width"
+         [style.height.%]="area.height"
+         [style.top.%]="area.y"
+         [style.left.%]="area.x"
+    >
+      {{i+1}}
+    </div>
+  </div>
+  <div class="area-info">
+    <h1>Marked area info</h1>
+    <ul>
+      <li *ngFor="let area of areas;let i = index">
+        <div class="title">
+          <span>Area {{i+1}}</span>
+          <button (click)="onDelete(i)">delete</button>
+        </div>
+        <div>
+          <label>
+            Caption:
+            <input [(ngModel)]="area.text" type="text">
+          </label>
+        </div>
+        <div>
+          <label>
+            <input [(ngModel)]="area.dummy" type="checkbox">Dummy Area
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
