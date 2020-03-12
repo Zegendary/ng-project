@@ -1,0 +1,29 @@
+<div class="main">
+
+  <div class="image-wrapper">
+    <div class="man-wrapper" [@moveRight]="score" *ngIf="score+score2 < 8">
+      <img class="man manA" [class.show]="score === 0" src="../../assets/animation/manA.png" alt="">
+      <img class="man manB" [class.show]="score === 1" src="../../assets/animation/manB.png" alt="">
+      <img class="man manC" [class.show]="score === 2" src="../../assets/animation/manC.png" alt="">
+      <img class="man manD" [class.show]="score === 3" src="../../assets/animation/manD.png" alt="">
+      <img class="man manE" [class.show]="score === 4" src="../../assets/animation/manE.png" alt="">
+    </div>
+    <img class="celebration" [class.show]="score+score2 === 8" src="../../assets/animation/celebration.gif" alt="">
+    <div class="woman-wrapper" *ngIf="score+score2 < 8">
+      <img class="woman womanE" [class.show]="score2 === 4" src="../../assets/animation/womenE.png" alt="">
+      <img class="woman womanD" [class.show]="score2 === 3" src="../../assets/animation/womenD.png" alt="">
+      <img class="woman womanC" [class.show]="score2 === 2" src="../../assets/animation/womenC.png" alt="">
+      <img class="woman womanB" [class.show]="score2 === 1" src="../../assets/animation/womenB.png" alt="">
+      <img class="woman womanA" [class.show]="score2 === 0" src="../../assets/animation/womenA.png" alt="">
+    </div>
+  </div>
+
+  <div class="process-wrapper">
+    <div
+      class="process"
+      [style.left.%]="score/4*50"
+      [style.right.%]="score2/4*50"
+    ></div>
+  </div>
+  <button (click)="addScore()">Move</button>
+</div>

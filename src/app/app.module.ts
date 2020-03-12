@@ -17,6 +17,7 @@ import {Game11Component, ImgOverviewDialogComponent} from './game11/game11.compo
 import { ImgComponent } from './game11/img.component';
 import { Game11AdminComponent } from './game11-admin/game11-admin.component';
 import {FormsModule} from '@angular/forms';
+import { DanceAnimationComponent } from './dance-animation/dance-animation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FormsModule} from '@angular/forms';
     Game11Component,
     ImgComponent,
     ImgOverviewDialogComponent,
-    Game11AdminComponent
+    Game11AdminComponent,
+    DanceAnimationComponent
   ],
   entryComponents: [
     ImgOverviewDialogComponent
