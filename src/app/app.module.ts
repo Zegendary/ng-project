@@ -18,6 +18,7 @@ import { ImgComponent } from './game11/img.component';
 import { Game11AdminComponent } from './game11-admin/game11-admin.component';
 import {FormsModule} from '@angular/forms';
 import { DanceAnimationComponent } from './dance-animation/dance-animation.component';
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DanceAnimationComponent } from './dance-animation/dance-animation.compo
     ImgComponent,
     ImgOverviewDialogComponent,
     Game11AdminComponent,
-    DanceAnimationComponent
+    DanceAnimationComponent,
+    DragAndDropComponent
   ],
   entryComponents: [
     ImgOverviewDialogComponent
